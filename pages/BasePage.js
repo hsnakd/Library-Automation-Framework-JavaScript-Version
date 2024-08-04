@@ -9,7 +9,7 @@ export class BasePage {
    */
   constructor(page) {
     this.page = page;
-    this.librarayUrl = process.env.LIBRARY_URL;
+    this.libraryUrl = process.env.LIBRARY_URL;
     this.studentUsername = process.env.LIBRARY_STUDENT_USERNAME;
     this.studentPassword = process.env.LIBRARY_STUDENT_PASSWORD;
     this.adminUsername = process.env.LIBRARY_ADMIN_USERNAME;

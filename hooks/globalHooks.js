@@ -9,7 +9,7 @@ const DEFAULT_TIMEOUT = 30000; // default timeout in milliseconds
 
 const browserSetup = {
   headless: false,
-  //slowMo: 1000,
+  // slowMo: 2000,
 };
 
 /**
@@ -107,7 +107,7 @@ class CustomWorld {
    *
    * @returns {Promise<import("@playwright/test").Page>} - A promise that resolves to the new page.
    */
-  async intializePage(){
+  async initializePage(){
     const page = await this.context.newPage();
     await page.setViewportSize({ width: WIDTH, height: HEIGHT });
     await page.setDefaultTimeout(DEFAULT_TIMEOUT);
@@ -125,7 +125,7 @@ class CustomWorld {
   async init() {
     this.browser = await this.initializeBrowser();
     this.context = await this.initializeContext();
-    this.page = await this.intializePage();
+    this.page = await this.initializePage();
     new PageManager(this.page);
 
     if (
