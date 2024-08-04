@@ -24,13 +24,20 @@ Given('user logs in as {string}', async function (userType) {
 
   // Click login button
   await PageManager.loginPage.clickLoginButton();
+
+  // verify the title is Library
+  await expect(PageManager.page).toHaveTitle("Library");
 });
 
-When('user clicks the {string} button under the account name', async function (buttonName) {
-//   await PageManager.homePage.clickLogoutButton();
+When('user clicks the account name on the top right corner of the page', async function () {
+    await PageManager.dashboardPage.userProfileImage.click();
 });
 
-Then('user is redirected to the login page with the title {string}', async function (expectedTitle) {
-//   const actualTitle = await PageManager.page.title();
-//   expect(actualTitle).toBe(expectedTitle);
+When('user clicks the logout button under the account name', async function () {
+  await PageManager.dashboardPage.logoutButton.click();
 });
+
+Then('user should be able to log out from the application', async function () {
+  await expect(PageManager.page).toHaveTitle("Login - Library");
+});
+
