@@ -5,6 +5,7 @@ export class BooksPage extends BasePage {
     super(page);
     this.bookCategories = page.locator("//select[@id='book_categories']");
     this.booksTable = page.locator("//table[@id='tbl_books']");
+
   }
   
 }
