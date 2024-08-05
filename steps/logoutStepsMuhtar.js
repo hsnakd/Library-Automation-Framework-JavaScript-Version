@@ -5,7 +5,7 @@ import { PageManager } from "../globalPagesSetup.js";
 
 // Step Definitions
 
-Given('user is already logged in as {string}', async function (user_type) {
+Given('user is already logged in as a {string}', async function (user_type) {
   await PageManager.loginPage.login(user_type);
 });
 

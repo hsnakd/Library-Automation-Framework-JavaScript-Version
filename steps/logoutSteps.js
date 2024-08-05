@@ -4,33 +4,12 @@ import { BrowserUtility } from '../utilities/BrowserUtility.js';
 import { PageManager } from "../globalPagesSetup.js";
 
 // Step Definitions
-Given('user logs in as {string}', async function (userType) {
-  // Go to the login page
-  await PageManager.page.goto(PageManager.loginPage.libraryUrl);
-
-  // Enter username
-  if (userType.toLowerCase() === "admin") {
-    await PageManager.loginPage.enterUsername(PageManager.loginPage.adminUsername);
-  } else {
-    await PageManager.loginPage.enterUsername(PageManager.loginPage.studentUsername); 
-  }
-
-  // Enter password
-  if (userType.toLowerCase() === "admin") {
-    await PageManager.loginPage.enterPassword(PageManager.loginPage.adminPassword);
-  } else {
-    await PageManager.loginPage.enterPassword(PageManager.loginPage.studentPassword); 
-  }
-
-  // Click login button
-  await PageManager.loginPage.clickLoginButton();
-
-  // verify the title is Library
-  await expect(PageManager.page).toHaveTitle("Library");
+Given('user is already logged in as {string}', async function (user_type) {
+  await PageManager.loginPage.login(user_type);
 });
 
 When('user clicks the account name on the top right corner of the page', async function () {
-    await PageManager.dashboardPage.userProfileImage.click();
+  await PageManager.dashboardPage.userProfileImage.click();
 });
 
 When('user clicks the logout button under the account name', async function () {
