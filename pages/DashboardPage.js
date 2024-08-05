@@ -16,6 +16,8 @@ export class DashboardPage extends BasePage {
       this.borrowingBooksModule = page.locator("//span[text()='Borrowing Books']");
     }
 
-
+    getModuleLocator(moduleName) {
+      return this.page.locator(`//span[text()='${moduleName}']`);
+  }
 
 }

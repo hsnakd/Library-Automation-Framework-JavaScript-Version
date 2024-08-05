@@ -11,3 +11,11 @@ Feature: Main modules of the application
 
     #? Should there be more scenarios for this user story? feel free to add more scenarios
 
+    Background:
+        Given user is already on the login page
+        When user is already logged in as "student"
+@lib-05-01
+    Scenario: Borrowing books on the "Books" Page
+        Then user should see modules 
+        | Books             |
+        | Borrowing Books   |
