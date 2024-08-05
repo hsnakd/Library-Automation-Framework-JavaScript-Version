@@ -1,4 +1,4 @@
-@lib-02
+@library-02
 Feature: Logout from the application
 
   As a user, I should be able to logout from the app.
@@ -10,7 +10,7 @@ Feature: Logout from the application
 
 @library-02-01
   Scenario Outline: Verify users can log out from the homepage
-    Given user is already logged in as "<user-type>"
+    Given user is already logged in as a "<user-type>"
     When user clicks the user profile on the top right corner of the page
     And user clicks the Log out button
     Then user should be able to log out from the app

@@ -6,12 +6,13 @@ Feature: Logout from the application
   #* AC1: user should log out from the homepage by clicking the “Log out”  button under the account name.
 
   Background:
-    Given user logs in as "<user-type>"
+    Given user is already on the login page
 
 @lib-02-01
   Scenario Outline: Verify users can log out successfully
-    When user clicks the account name on the top right corner of the page
-    When user clicks the logout button under the account name
+    When user is already logged in as "<user-type>"
+    And user clicks the account name on the top right corner of the page
+    And user clicks the logout button under the account name
     Then user should be able to log out from the application 
 
     Examples:

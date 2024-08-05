@@ -68,6 +68,5 @@ export class LoginPage extends BasePage {
     } else {
       throw new Error("Invalid user type. Please provide either 'admin' or 'student'.");
     }
-
   }
 }
