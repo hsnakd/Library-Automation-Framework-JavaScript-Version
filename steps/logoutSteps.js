@@ -3,7 +3,7 @@ import { expect } from '@playwright/test';
 import { BrowserUtility } from '../utilities/BrowserUtility.js';
 import { PageManager } from "../globalPagesSetup.js";
 
-// Step Definitions
+// @lib-02-01
 Given('user is already logged in as {string}', async function (user_type) {
   await PageManager.loginPage.login(user_type);
 });

@@ -6,6 +6,8 @@ import { PageManager } from "../../globalPagesSetup.js";
 
 // WRITE YOUR STEP DEFINITIONS HERE...
 
+// @lib-05-01
+// @lib-09-01
 Then('user should see modules', async function (dataTable) {
     // Get the list of modules from the data table
     const modules = dataTable.rawTable.flat();

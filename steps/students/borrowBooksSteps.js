@@ -7,6 +7,10 @@ import { PageManager } from "../../globalPagesSetup.js";
 // WRITE YOUR STEP DEFINITIONS HERE...
 
 // @lib-06-01
+When('user clicks the {string} module', async function (buttonName) {
+    await PageManager.dashboardPage.getModuleLocator(buttonName).click();
+  });
+  
 
 When('user searches the book they want to borrow {string}', async function (bookName) {
     await PageManager.booksPage.searchBox.fill(bookName);
@@ -26,4 +30,3 @@ Then('the message {string} will be displayed', async function (errorMessage) {
     await BrowserUtility.verifyEqualMessages(errorMessage, await PageManager.borrowingBooksPage.borrowedBookMessage.innerText());
 
 });
-

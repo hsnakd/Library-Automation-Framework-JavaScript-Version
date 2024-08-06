@@ -19,7 +19,7 @@ Feature: Login to the application
     Examples:
       | user-type |
       | admin     |
-      | studen    |
+      | student   |
 
 
   # TODO: Verify users can not login with invalid credentials
