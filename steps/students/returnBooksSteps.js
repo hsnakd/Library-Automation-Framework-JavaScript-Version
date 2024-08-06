@@ -5,10 +5,7 @@ import { PageManager } from "../../globalPagesSetup.js";
 
 // WRITE YOUR STEP DEFINITIONS HERE...
 
-When('user clicks the Borrowing Books module', async function () {
-    await PageManager.dashboardPage.borrowingBooksModule.click();
-});
-
+// @lib-04-01
 When('user sees that the book they want to return is available with the Return Book button {string}', async function (bookName) {
     const returnButton = await PageManager.borrowingBooksPage.getReturnBookButton(bookName);
     await expect(returnButton).toBeVisible();

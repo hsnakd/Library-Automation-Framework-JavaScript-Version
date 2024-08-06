@@ -4,9 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cucumber-js",
-    "test:tag": "npx cucumber-js --tags @lib-04-01",
+    "test:tag": "npx cucumber-js --tags @lib-07",
     "test:tags": "npx cucumber-js --tags '@lib-06-01 or @lib-04-01'",
-
     "Mac-open:report": "open test-reports/cucumber-report.html",
     "Windows-open:report": "start test-reports/cucumber-report.html"
   },

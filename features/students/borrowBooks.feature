@@ -4,11 +4,24 @@ Feature: Borrowing books
     As a student, I should be able to borrow books on the "Books" Page.
 
 
-    #! Acceptance Criteria are missing :(
+    #* AC1: The Borrow Book button is displayed in the books page
+    #* AC2: The Borrow Book button should be disabled after user clicks it
+    #* AC3: The Borrow Book button should be enabled for the books that the student can borrow
+    #* AC4: The books student borrowed should be displayed in the Borrowing Books page
 
-    #TODO: Analyze the user story and create acceptance criteria yourself!
 
-    #TODO: Create scenarios that cover all the acceptance criteria
+    # TODO: Verify that the Borrow Book Button is displayed on the Books page
+
+    # TODO: Verify that the Borrow Book button is disabled if the book is already borrowed by a student
+
+    # TODO: Verify that the Borrow Book button is enabled if the book is not borrowed by a student yet
+
+    # TODO: Verify that the name of the student is displayed in the Borrowed By column once the student borrows the book
+
+    # TODO: Verify that the book is displayed in the Borrowing Books page after the student click the Borrow Book button
+
+    #TODO: Fell free to add more...
+
 
 
   Background:
@@ -17,7 +30,7 @@ Feature: Borrowing books
 
   @lib-06-01
   Scenario Outline: Borrowing books on the "Books" Page
-    And user clicks the Books module
+    And user clicks the "Books" module
     And user searches the book they want to borrow "<bookName>"
     And user sees that the book they want to borrow is available "<bookName>"
     And user clicks on the Borrow Book button of "<bookName>"

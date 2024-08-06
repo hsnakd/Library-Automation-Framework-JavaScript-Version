@@ -6,12 +6,9 @@ import { PageManager } from "../globalPagesSetup.js";
 // WRITE YOUR STEP DEFINITIONS HERE...
 
 // @lib-03-01
-  When('user clicks the Books module', async function () {
-    // Locate and click the Books button
-    await PageManager.dashboardPage.booksModule.click();
-  });
   
   Then('user should see the following book categories:', async function (dataTable) {
+    PageManager.booksPage.bookCategories.bookCategories
     const expectedCategories = dataTable.rawTable.map(row => row[0]);
     console.log(expectedCategories);
   
@@ -29,5 +26,23 @@ import { PageManager } from "../globalPagesSetup.js";
 
 
 
-
 // @lib-03-02
+When('user clicks Books link', async function () {
+  await PageManager.dashboardPage.booksLink.click();
+});
+
+When('user clicks the book categories drop down box', async function () {
+  await PageManager.booksPage.bookCategoriesDropDown.click();
+});
+
+Then('user should see {int} book categories', async function (int) {
+  const totalOptions = await PageManager.booksPage.bookCategoriesDropDown.locator("option").count();
+  expect(totalOptions).toBe(int);
+});
+
+
+// @lib-03-03
+Then('book category name {string} should be inlcuded in the categories', async function (string) {
+    const options = await PageManager.booksPage.bookCategoriesDropDown.locator("option").allInnerTexts();
+    expect(options).toContain(string);
+});
