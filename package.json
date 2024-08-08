@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cucumber-js",
-    "test:tag": "npx cucumber-js --tags @lib-07",
+    "test:tag": "npx cucumber-js --tags @lib-10",
     "test:tags": "npx cucumber-js --tags '@lib-06-01 or @lib-04-01'",
     "Mac-open:report": "open test-reports/cucumber-report.html",
     "Windows-open:report": "start test-reports/cucumber-report.html"
@@ -15,8 +15,10 @@
   "description": "",
   "dependencies": {
     "@cucumber/cucumber": "^10.8.0",
+    "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.45.3",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "faker": "^5.5.3"
   },
   "type": "module"
 }
